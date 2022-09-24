@@ -1,4 +1,4 @@
-import firebase from 'firebase/app';
+import { getAuth as auth } from 'firebase/auth';
 
 export const addAuthListener = (callback) => {
     const onChange = (user) => {
@@ -9,5 +9,5 @@ export const addAuthListener = (callback) => {
         }
     }
 
-    return firebase.auth().onAuthStateChanged(onChange);
+    return auth().onAuthStateChanged(onChange);
 }

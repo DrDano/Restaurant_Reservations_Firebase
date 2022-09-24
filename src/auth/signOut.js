@@ -1,8 +1,9 @@
-import firebase from 'firebase/app';
+import { getAuth } from 'firebase/auth';
 
 export const signOut = async() => {
+    const auth = getAuth();
     try {
-        await firebase.auth().signOut();
+        await auth.signOut();
     } catch (error) {
         throw new Error('Error while signing out')
     }

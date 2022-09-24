@@ -1,7 +1,7 @@
-import firebase from 'firebase/app';
+import { getAuth as auth } from 'firebase/auth';
 
 export const getCurrentUser = () => {
-    const user = firebase.auth().currentUser;
+    const user = auth.currentUser
     if (!user) return null;
     return {};
 }
