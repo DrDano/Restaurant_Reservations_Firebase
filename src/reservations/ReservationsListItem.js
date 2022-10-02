@@ -39,14 +39,15 @@ const ButtonWrap = styled.div`
 */
 export const ReservationsListItem = ({ item: reservation, onSelect }) => {
     const { restaurant } = reservation;
+    const r = restaurant["0"];
     return (
         <ListItemContainer>
             <ThumbnailWrap>
-                <Thumbnail width='100px' height='100px' url={restaurant.imageUrl} />
+                <Thumbnail width='100px' height='100px' url={r.imageUrl} />
             </ThumbnailWrap>
             <DetailsSection>
-                <Link to={`/restaurants/${restaurant.id}`}>
-                    <MainDetail>{restaurant.name}</MainDetail>
+                <Link to={`/restaurants/${r.id}`}>
+                    <MainDetail>{r.name}</MainDetail>
                 </Link>
                 <div>{reservation.date} @ {reservation.time}</div>
                 <div>{reservation.numberOfPeople} people</div>
