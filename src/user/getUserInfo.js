@@ -2,7 +2,7 @@ import { initializeApp } from "firebase/app";
 import { firebaseConfig } from '../config';
 const { getFirestore, doc, getDoc } = require('firebase/firestore');
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+const db = getFirestore();
 
 export const getUserInfo = async userId => {
     const docRef = doc(db, userId);

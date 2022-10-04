@@ -57,7 +57,8 @@ export const RestaurantDetailPage = () => {
 
     useEffect(() => {
         const loadRestaurant = async () => {
-            const result = await getRestaurant(id);
+            const rawResult = await getRestaurant(id);
+            const result = rawResult["0"];
             setRestaurant(result);
             setIsLoading(false);
         }

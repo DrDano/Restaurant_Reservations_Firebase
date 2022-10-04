@@ -46,7 +46,7 @@ export const ReservationsListItem = ({ item: reservation, onSelect }) => {
                 <Thumbnail width='100px' height='100px' url={r.imageUrl} />
             </ThumbnailWrap>
             <DetailsSection>
-                <Link to={`/restaurants/${r.id}`}>
+                <Link to={`/restaurants/${r.restaurantId}`}>
                     <MainDetail>{r.name}</MainDetail>
                 </Link>
                 <div>{reservation.date} @ {reservation.time}</div>

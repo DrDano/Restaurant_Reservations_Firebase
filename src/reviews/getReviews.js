@@ -1,13 +1,12 @@
-import { getFirestore, collection, query, where, doc } from "firebase/firestore";
+import { getFirestore, collection, query, where, getDocs, doc } from "firebase/firestore";
 import { mapAsync } from '../util';
 import { getUserInfo } from '../user';
 
-
 export const getReviews = async restaurantId => {
     const db = getFirestore();
-    const restaurantRef = collection(db, restaurantId);
-    const querySnap = query(restaurantRef, where('restaurantId', '==', restaurantId));
-    const queryResult = querySnap.docs.map(doc => ({
+    const q = query(collection(db, 'reviews'), where('restaurantId', '==', restaurantId.toString()));
+    const querySnapshot = await getDocs(q);
+    const queryResult = querySnapshot.docs.map(doc => ({
         ...doc.data(),
         id: doc.id
     }));
