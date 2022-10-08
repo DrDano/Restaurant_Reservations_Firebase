@@ -8,5 +8,5 @@ export const subscribeToCurrentUserReservations = (cb) => {
         return cb([]);
     }
     
-    return subscribeToReservations(currentUser, cb);
+    return subscribeToReservations(currentUser.uid, cb);
 }
