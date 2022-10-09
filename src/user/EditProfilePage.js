@@ -48,7 +48,6 @@ export const EditProfilePage = () => {
     useEffect(() => {
         const loadUserInfo = async () => {
             const userInfo = await getCurrentUserInfo();
-            console.log(userInfo)
             setFirstName(userInfo.firstName);
             setLastName(userInfo.lastName);
             setBio(userInfo.bio);

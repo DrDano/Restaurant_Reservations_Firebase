@@ -5,7 +5,6 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore();
 
 export const getUserInfo = async userId => {
-    console.log(userId)
     
     const docRef = doc(db, `users/${userId}`);
     const docSnap = await getDoc(docRef);

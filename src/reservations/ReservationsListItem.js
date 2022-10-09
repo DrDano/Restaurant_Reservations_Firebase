@@ -40,7 +40,6 @@ const ButtonWrap = styled.div`
 export const ReservationsListItem = ({ item: reservation, onSelect }) => {
     const { restaurant } = reservation;
     const r = restaurant["0"];
-    console.log(r)
     return (
         <ListItemContainer>
             <ThumbnailWrap>
